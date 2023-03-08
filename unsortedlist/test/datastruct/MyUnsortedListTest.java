@@ -178,13 +178,13 @@ public class MyUnsortedListTest {
 		assertTrue("actualList is now Empty",actualList.isEmpty());
 				
 		// Test Exception
-		Exception exception = assertThrows(IndexOutOfBoundsException.class, () -> {
+		Exception exception = assertThrows(EmptyListException.class, () -> {
 			actualList.popLast();
 	    });
 		assertNull(exception.getMessage());
 	}
 	
-	@Test(expected = IndexOutOfBoundsException.class)
+	@Test(expected = EmptyListException.class)
 	public final void testPopLastEmptyListThrowsException() throws IndexOutOfBoundsException{
 		actualList.popLast();
 	}
